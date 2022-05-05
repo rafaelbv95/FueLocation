@@ -57,7 +57,18 @@
             ?>
             <!-- Navbar End -->
 
-            
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-12">
+
+                        <div class="square_block " id="square"></div>
+
+                        <div id="map"></div>
+                        <div id="idmap"></div>
+                    </div>
+
+                </div>
+            </div>
 
 
             <!-- Footer Start -->
@@ -88,6 +99,7 @@
 
     <!-- Template Javascript -->
      <script src="js/main.js"></script> 
+     <script src="js/function.js"></script>
     
 </body>
 

@@ -22,7 +22,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 <div class="navbar-nav w-100">
                     <a href="index.php" class="nav-item nav-link <?= ($activePage == 'index') ? 'active' : ''; ?> "><i class="far fa-file-alt me-2"></i>Inicio</a>
                     <a href="gasolinera.php" class="nav-item nav-link <?= ($activePage == 'gasolinera') ? 'active' : ''; ?>"><i class="fa fa-th me-2"></i>Gasolineras</a>
-                    <a href="contacto.php" class="nav-item nav-link <?= ($activePage == 'contacto') ? 'active' : ''; ?>"><i class="fa fa-laptop me-2"></i>Contáctanos</a>
+                    <a href="contact.php" class="nav-item nav-link <?= ($activePage == 'contact') ? 'active' : ''; ?>"><i class="fa fa-laptop me-2"></i>Contáctanos</a>
                    
                 </div>
             </nav>
