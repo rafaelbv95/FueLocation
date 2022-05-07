@@ -35,7 +35,7 @@
                             <a href="">Olvidé mi contraseña</a>
                         </div>
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Iniciar sesión</button>
-                        <p class="text-center mb-0">¿No tienes una cuenta? <a href="">Registro</a></p>
+                        <p class="text-center mb-0">¿No tienes una cuenta? <a href="signup.php">Registro</a></p>
                     </div>
                 </div>
             </div>
