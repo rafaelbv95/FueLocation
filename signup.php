@@ -6,7 +6,7 @@
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <?php
-                require_once('templates/spinner.php')
+               // require_once('templates/spinner.php')
         ?>
         <!-- Spinner End -->
 
@@ -15,6 +15,7 @@
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-5">
+                <form role="form" id="register-form" method="POST">
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <a href="index.html" class="">
@@ -22,24 +23,29 @@
                             </a>
                             <h3>Registro</h3>
                         </div>
+                      
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="usuario">
+                            <input type="text" class="form-control" id="floatingText" name="usuario" placeholder="usuario">
                             <label for="floatingText">Nombre usuario</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="Juan">
+                            <input type="text" class="form-control" id="floatingText" name="nombre" placeholder="Juan">
                             <label for="floatingText">Nombre</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <input type="text" class="form-control" id="floatingInput"  name="apellidos" placeholder="name@example.com">
+                            <label for="floatingInput">Apellidos</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput"  name="email" placeholder="name@example.com">
                             <label for="floatingInput">Correo</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input type="password" class="form-control" id="floatingPassword" name="contrasenya1" placeholder="Password">
                             <label for="floatingPassword">Contraseña</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input type="password" class="form-control" id="floatingPassword" name="contrasenya2" placeholder="Password">
                             <label for="floatingPassword">Repetir Contraseña</label>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-4">
@@ -48,9 +54,10 @@
                                 <label class="form-check-label" for="exampleCheck1">Términos y condiciones</label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Registrarse</button>
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4" name="Enviar">Registrarse</button>
                         <p class="text-center mb-0">¿Ya tienes una cuenta? <a href="signin.php">Iniciar Sesión</a></p>
                     </div>
+                </form>
                 </div>
             </div>
         </div>
@@ -59,6 +66,12 @@
 
     <!-- JavaScript Libraries -->
         <?php
+        require_once('CRUDUser.php');
+           if (isset($_POST["Enviar"])) {
+            
+
+            insertar();
+        }
             require_once('templates/includeJsScript.php')
         ?>
 </body>
