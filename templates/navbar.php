@@ -8,6 +8,9 @@
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" type="search" placeholder="Búsqueda">
                 </form>
+                <?php
+                	if (isset($_SESSION['usuario'])) {
+                        ?>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -21,4 +24,18 @@
                         </div>
                     </div>
                 </div>
+                <?php
+                    }else {
+                ?>  
+                <div class="navbar-nav align-items-center ms-auto mb-3 mt-3">
+                    <div class="nav-item dropdown">
+                        <a name="" id="" class="btn btn-primary" href="#" role="button">Iniciar Sesión/Registro </a>
+                    </div>
+                </div>
+
+                <?php
+                    }
+
+                ?>
+                
             </nav>
