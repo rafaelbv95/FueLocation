@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                <a href="index.php" class="navbar-brand d-flex d-lg-none me-4">
+                <img class=" me-lg-2" src="img/fuel.png" alt="" style="width: 30px; height: 30px;">
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
@@ -10,7 +10,7 @@
                 </form>
                 <?php
                 	if (isset($_SESSION['usuario'])) {
-                        ?>
+                ?>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -29,7 +29,7 @@
                 ?>  
                 <div class="navbar-nav align-items-center ms-auto mb-3 mt-3">
                     <div class="nav-item dropdown">
-                        <a name="" id="" class="btn btn-primary" href="#" role="button">Iniciar Sesión/Registro </a>
+                        <a href="signin.php" name="" id="" class="btn btn-primary" href="#" role="button">Iniciar Sesión/Registro </a>
                     </div>
                 </div>
 
