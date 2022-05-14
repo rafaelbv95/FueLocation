@@ -18,12 +18,12 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">usuario</h6>
-                        <span>Admin</span>
+                        <h6 class="mb-0"><?php echo $_SESSION['usuario'] ?></h6>
+                        <span><?php echo $_SESSION['rol'] ?></span>
                     </div>
                 </div>
                 <?php
-                    }else {
+                    }
                 ?>  
                 <div class="navbar-nav w-100">
                     <a href="index.php" class="nav-item nav-link <?= ($activePage == 'index') ? 'active' : ''; ?> "><i class="far fa-file-alt me-2"></i>Inicio</a>
@@ -31,8 +31,6 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     <a href="contact.php" class="nav-item nav-link <?= ($activePage == 'contact') ? 'active' : ''; ?>"><i class="fa fa-laptop me-2"></i>Contáctanos</a>
                    
                 </div>
-                <?php
-                    }
-                ?>
+                
             </nav>
         </div>
