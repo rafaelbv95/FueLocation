@@ -36,13 +36,37 @@ function ajax(urlPeticion, peticion) {
         url: urlPeticion,
         crossDomain: true,
 
-        success: function (json) {
+        success: function(json) {
             const gasolineras = json;
 
 
             if (peticion == "gasolineras") {
 
+                if (gasolineras["ListaEESSPrecio"].length == 0) {
+                    $("#square").append(
+                        `<div id="flip" class="bg-primary"> <h1>Sin datos</h1></div>` +
+                        `<div id="panel"  class="bg-primary"><h1>No existen gasolineras en este municipio</h1> </div>`
+
+                    );
+                    if (!$('#scriptDatos').length) {
+                        var script = document.createElement('script');
+                        script.id = "scriptDatos"
+                        document.body.appendChild(script);
+                        $("#scriptDatos").append(` 
+                        $(document).ready(function(){
+                            $("#flip").click(function(){
+                                $("#panel").slideDown("slow");
+                            });
+                            });`);
+                    }
+
+
+
+                }
+
                 for (let i = 0; i < gasolineras["ListaEESSPrecio"].length; i++) {
+
+
                     var nombre = gasolineras["ListaEESSPrecio"][i]["Rótulo"];
                     var diesel = gasolineras["ListaEESSPrecio"][i]["Precio Gasoleo A"];
                     var gasolina95 = gasolineras["ListaEESSPrecio"][i]["Precio Gasolina 95 E5"];
@@ -60,7 +84,6 @@ function ajax(urlPeticion, peticion) {
                          <input type="hidden"  id="longitud${i}" value="${longitud}"></a>`
 
                     );
-
                 }
                 tamanyoRecuadro(3);
             } else {
@@ -106,7 +129,7 @@ function ajax(urlPeticion, peticion) {
 
 
         },
-        error: function (xhr, status) {
+        error: function(xhr, status) {
 
 
             console.log("error");
@@ -191,4 +214,3 @@ function inicializar() {
     }, 500);
 
 }
-

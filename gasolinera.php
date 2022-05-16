@@ -28,6 +28,12 @@
             ?>
             <!-- Navbar End -->
 
+            <?php
+            if (isset($_SESSION['usuario'])) {
+
+            ?>
+            
+
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-12">
@@ -40,6 +46,20 @@
 
                 </div>
             </div>
+
+            <?php
+                } else {
+            ?>
+
+         
+                </script>
+
+            <?php
+
+
+                }
+
+            ?>  
 
 
             <!-- Footer Start -->
@@ -57,14 +77,14 @@
         ?>
     </div>
 
-   
+                
         <?php
             require_once('templates/includeJsScript.php')
         ?>
 
     <!-- Template Javascript -->
      <script src="js/function.js"></script>
-    
+             
 </body>
 
 </html>
