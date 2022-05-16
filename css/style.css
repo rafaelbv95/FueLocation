@@ -288,3 +288,26 @@
     height: 500px;
     width: 100%;
 }
+
+#login {
+    color: #FFFFFF;
+    height: 100px;
+    width: 200px;
+    position: relative;
+}
+
+#panel,
+#flip {
+    padding: 5px;
+    text-align: center;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+
+h1 {
+    color: #FFFFFF;
+}

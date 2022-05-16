@@ -27,8 +27,6 @@
             ?>
             <!-- Navbar End -->
 
-           
-
 
             <!-- Footer Start -->
             <?php
