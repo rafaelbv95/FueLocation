@@ -27,9 +27,40 @@
                 require_once('templates/navbar.php')
             ?>
             <!-- Navbar End -->
+            <div class="container pt-5 pb-5">
+                <div class="row">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-4 ">
+                                    <input class="form-control" type="text"  placeholder="Nombre">
+                                </div>
+                                <div class="col-sm-4 ">
+                                    <input class="form-control" type="text"  placeholder="Email">
+                                </div>
+                                <div class="col-sm-4 ">
+                                    <input class="form-control" type="text"placeholder="Teléfono">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-12 ">
+                                    <textarea placeholder="Escribe el mensaje aquí..." class="form-control"  rows="9"></textarea>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label class="checkbox"><input type="checkbox"> Regístrese para recibir el boletín</label>
+                                </div>
+                                <div class="col-sm-6 text-right">
+                                    <input class="btn  btn-primary" type="submit" value="Enviar mensaje">
+                                </div>
+                            </div>
+                        </form>
 
-           
-
+                   
+                </div>
+            </div> <!-- /container -->
 
             <!-- Footer Start -->
             <?php
