@@ -50,9 +50,12 @@
             <?php
                 } else {
             ?>
+            <div class="container-fluid pt-4 px-4  text-center mt-5">
+            <h2 class="iniciar"> Para poder consultar los datos debes de iniciar sesión</h2>
 
-         
-                </script>
+            </div>
+
+                
 
             <?php
 

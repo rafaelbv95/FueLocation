@@ -214,3 +214,8 @@ function inicializar() {
     }, 500);
 
 }
+
+function iniciar() {
+    $(".iniciar").animate({ "opacity": "1" }, 2000);
+
+}

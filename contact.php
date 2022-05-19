@@ -31,6 +31,9 @@
                 <div class="row">
                         <form>
                             <div class="row">
+                                <div class="col-sm-12 mt-5 mb-5 text-center"> 
+                                    <h2>Formulario de contacto</h2>
+                                </div>
                                 <div class="col-sm-4 ">
                                     <input class="form-control" type="text"  placeholder="Nombre">
                                 </div>
@@ -48,11 +51,11 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="row">
+                            <div class="row mb-5">
                                 <div class="col-sm-6">
                                     <label class="checkbox"><input type="checkbox"> Regístrese para recibir el boletín</label>
                                 </div>
-                                <div class="col-sm-6 text-right">
+                                <div class="col-sm-6 text-right mt-5 mb-5">
                                     <input class="btn  btn-primary" type="submit" value="Enviar mensaje">
                                 </div>
                             </div>
