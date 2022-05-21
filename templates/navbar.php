@@ -6,7 +6,7 @@
                     <i class="fa fa-bars"></i>
                 </a>
                 <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Búsqueda">
+                    <input class="form-control border-0" id="buscar" type="text" placeholder="Búsqueda">
                 </form>
                 <?php
                 	if (isset($_SESSION['usuario'])) {
