@@ -124,6 +124,7 @@ function ajax(urlPeticion, peticion) {
                 }
 
                 tamanyoRecuadro(7);
+                busqueda();
 
             }
 
@@ -217,5 +218,25 @@ function inicializar() {
 
 function iniciar() {
     $(".iniciar").animate({ "opacity": "1" }, 2000);
+
+}
+
+function busqueda() {
+
+    if (!$('#buscarDatos').length) {
+        var script = document.createElement('script');
+        script.id = "buscarDatos"
+        document.body.appendChild(script);
+        $("#buscarDatos").append(` 
+        $(document).ready(function(){
+            $("#buscar").on("keyup", function() {
+              var value = $(this).val().toLowerCase();
+              $("#square a").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+              });
+            });
+          });`);
+    }
+
 
 }
