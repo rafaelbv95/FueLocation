@@ -40,8 +40,8 @@
 
                         <div class="square_block " id="square"></div>
 
-                        <div id="map"></div>
-                        <div id="idmap"></div>
+                        <div id="map" class="pb-5"></div>
+                        <div id="idmap"class="pt-5"></div>
                     </div>
 
                 </div>

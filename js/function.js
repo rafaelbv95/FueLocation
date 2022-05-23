@@ -195,7 +195,7 @@ function CargaScript(id) {
             id: 'mapbox/streets-v11',
             tileSize: 512,
             zoomOffset: -1,
-            accessToken: 'pk.eyJ1IjoicmFmYWJ2IiwiYSI6ImNsM2l0anhsdjAxa3YzY3FyYTI0OXRpaWgifQ.UmNraGWQgoWnMXK_809-4g'
+            accessToken: ENV['TOKEN']
         }).addTo(map);
         var marker = L.marker([latitud, longitud]).addTo(map)
             .bindPopup(`${nombre}.<br> `)
