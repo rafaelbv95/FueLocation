@@ -6,7 +6,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 
 <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                <a href="index.php" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-gradient"></i>FueLocation</h3>
                 </a>
                 <?php

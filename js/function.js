@@ -1,3 +1,7 @@
+var mapaInicializado = 0;
+var map;
+
+
 function provincias() {
     var provincias = "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/Provincias/";
     var peticion = "provincias";
@@ -78,8 +82,8 @@ function ajax(urlPeticion, peticion) {
 
 
                     $("#square").append(
-                        `<a href="javascript:CargaScript(${i});" class="square  btn btn-primary text-center col-auto "> <h3>${nombre}</h3>
-                         <p> Diesel: ${diesel}</p> <p>Gasolina 95: ${gasolina95} </p> <p>Dirección ${direccion}</p>
+                        `<a href="javascript:CargaScript(${i});" class="square  btn btn-primary text-center col-auto "> <h3 id="h${i}">${nombre}</h3>
+                         <p> Diesel: ${diesel}€</p> <p>Gasolina 95: ${gasolina95}€ </p> <p>Dirección ${direccion}</p>
                          <input type="hidden"  id="latitud${i}" value="${latitud}">
                          <input type="hidden"  id="longitud${i}" value="${longitud}"></a>`
 
@@ -151,21 +155,11 @@ function tamanyoRecuadro(params) {
 
 function CargaScript(id) {
 
-    if (!$('#apiGoogleMap').length) {
-        var script = document.createElement('script');
-        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=inicializar';
-        script.id = "apiGoogleMap"
-        document.body.appendChild(script);
-
-
-    }
-
-
     if ($('#idMapa').length) {
         var idM = parseFloat(id);
         $('#idMapa').removeAttr("value");
         $('#idMapa').attr("value", `${idM}`);
-        inicializar();
+
 
 
     } else {
@@ -175,40 +169,38 @@ function CargaScript(id) {
         );
     }
 
-
-}
-
-
-function inicializar() {
-
     var idMapa = parseInt($("#idMapa").val());
     var latitud = $("#latitud" + idMapa).val();
     var longitud = $("#longitud" + idMapa).val();
     latitud = parseFloat(latitud.replace(/,/g, '.'));
     longitud = parseFloat(longitud.replace(/,/g, '.'));
-
-    console.log(latitud);
-    console.log(longitud);
-
-    $("style").remove();
-    $("#map").innerHTML = "";
-
-    //Opciones del mapa
-    var coord = { lat: latitud, lng: longitud };
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
-        center: coord
-    });
+    var nombre = $(`#h${id}`).html();
 
 
+    if (mapaInicializado == 1) {
 
-    //Añadimos el marcador
-    var marker = new google.maps.Marker({
-        position: coord,
-        map: map
-    });
+        var marker = L.marker([latitud, longitud]).addTo(map);
 
-    var height = $(window).height();
+        L.marker([latitud, longitud]).addTo(map)
+            .bindPopup(`${nombre}`)
+            .openPopup();
+
+    } else {
+        mapaInicializado = 1;
+        map = L.map('map').setView([latitud, longitud], 13);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: ENV['TOKEN']
+        }).addTo(map);
+        var marker = L.marker([latitud, longitud]).addTo(map)
+            .bindPopup(`${nombre}.<br> `)
+            .openPopup();
+    }
 
     $('html, body').animate({
         scrollTop: $("#map").offset().top
