@@ -34,14 +34,14 @@
                     ?>
 
 
-                        <div class="container-fluid pt-4 px-4">
+                        <div class="container-fluid pt-4 px-4 pb-5">
                             <div class="row g-4">
                                 <div class="col-sm-12 col-xl-12">
 
-                                    <div class="square_block " id="square"></div>
+                                    <div class="square_block pb-5" id="square"></div>
 
-                                    <div id="map" class="pb-5"></div>
-                                    <div id="idmap" class="pt-5"></div>
+                                    <div id="map" class="pb-5 pt-5"></div>
+                                    <div id="idmap" class="pt-5 pb-5"></div>
                                 </div>
 
                             </div>
