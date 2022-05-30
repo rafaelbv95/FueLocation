@@ -311,6 +311,12 @@ h1 {
     color: #ffffff;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
 .text-gradient {
     color: transparent;
     background-image: linear-gradient( to left, #00d5ff, #7b68ee, #3498db, #2ecc71, #0026ff);
@@ -328,12 +334,6 @@ h1 {
     }
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-
 .iniciar {
     animation: fadein 3s;
 }
@@ -347,5 +347,20 @@ h1 {
     }
     100% {
         opacity: 1;
+    }
+}
+
+.formulario {
+    animation: formulario 3s;
+}
+
+@keyframes formulario {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
     }
 }

@@ -163,10 +163,6 @@ function CargaScript(id) {
     );
 }
 
-function iniciar() {
-    $(".iniciar").animate({ opacity: "1" }, 2000);
-}
-
 function busqueda() {
     if (!$("#buscarDatos").length) {
         var script = document.createElement("script");

@@ -24,13 +24,21 @@
                 <div class="content">
                     <!-- Navbar Start -->
                     <?php
-                    require_once('templates/navbar.php')
+                    require_once('templates/navbar.php');
+
+
                     ?>
                     <!-- Navbar End -->
                     <div class="container pt-5 pb-5">
                         <div class="row">
-                            <form>
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                                 <div class="row">
+                                    <?php
+                                    if (isset($_POST['Enviar'])) {
+                                        echo "<h4 class='text-success text-center formulario'>Enviado con éxito  </h4>";
+                                    }
+
+                                    ?>
                                     <div class="col-sm-12 mt-5 mb-5 text-center">
                                         <h2>Formulario de contacto</h2>
                                     </div>
@@ -53,13 +61,15 @@
                                 <br>
                                 <div class="row mb-5">
                                     <div class="col-sm-6">
-                                        <label class="checkbox"><input type="checkbox"> Regístrese para recibir el boletín</label>
+
                                     </div>
                                     <div class="col-sm-6 text-right mt-5 mb-5">
-                                        <input class="btn  btn-primary" type="submit" value="Enviar mensaje">
+
+                                        <input class="btn  btn-primary" type="submit" name="Enviar">
                                     </div>
                                 </div>
                             </form>
+
 
 
                         </div>
@@ -80,9 +90,12 @@
                 ?>
             </div>
 
+
             <?php
             require_once('templates/includeJsScript.php')
             ?>
+
+
 
         </body>
 

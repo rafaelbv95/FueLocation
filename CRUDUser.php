@@ -20,9 +20,26 @@ function login()
 
 function insertar()
 {
-
     require_once('bd.php');
-    $sql = "INSERT INTO Usuarios(usuario,nombre,apellidos, email, password,id_Rol_usuario) VALUES (:usuario,:nombre,:apellidos,:email,:password,:rolUsuario)";
-    $consulta = $bd->prepare($sql);
-    $consulta->execute(["usuario" => $_POST['usuario'], "nombre" => $_POST['nombre'], "apellidos" => $_POST['apellidos'], "email" => $_POST['email'], "password" => password_hash($_POST['contrasenya1'], PASSWORD_DEFAULT), "rolUsuario" => 2]);
+
+    $query = "SELECT COUNT(*) FROM Usuarios WHERE usuario = :usuario";
+    $stmt = $bd->prepare($query);
+    $stmt->execute(["usuario" => $_POST['usuario']]);
+    $numberRows = $stmt->fetchColumn();
+
+    if ($numberRows == 0) {
+
+
+        $sql = "INSERT INTO Usuarios(usuario,nombre,apellidos, email, password,id_Rol_usuario) VALUES (:usuario,:nombre,:apellidos,:email,:password,:rolUsuario)";
+        $consulta = $bd->prepare($sql);
+        $consulta->execute(["usuario" => $_POST['usuario'], "nombre" => $_POST['nombre'], "apellidos" => $_POST['apellidos'], "email" => $_POST['email'], "password" => password_hash($_POST['contrasenya1'], PASSWORD_DEFAULT), "rolUsuario" => 2]);
+
+        header("Location:index.php");
+    } else { ?>
+
+        <script>
+            alert("El usuario ya existe");
+        </script>
+<?php
+    }
 }

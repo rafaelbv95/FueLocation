@@ -31,7 +31,7 @@
 
                         <h1 class="text-gradient FueLocation mt-5">FueLocation</h1>
                         <br> <br>
-                        <h2 class="mb-5">Es una aplicación web que se encarga de obtener los precios actualizados de las gasolineras de la región española </h2>
+                        <h2 class="mb-5">Es una aplicación web que se encarga de obtener los precios actualizados de las gasolineras españolas </h2>
                         <p class="text-muted">
                             Desarrollada por:
                         <ul class="list-unstyled text-muted ">
