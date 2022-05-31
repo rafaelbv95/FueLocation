@@ -18,8 +18,7 @@
                     <span class="d-none d-lg-inline-flex"><?php echo $_SESSION['usuario'] ?></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                    <a href="#" class="dropdown-item">Perfil</a>
-                    <a href="#" class="dropdown-item">Ajustes</a>
+                    <a href="profile.php" class="dropdown-item">Perfil</a>
                     <a href="logout.php" class="dropdown-item">Cerrar sesión</a>
                 </div>
             </div>
