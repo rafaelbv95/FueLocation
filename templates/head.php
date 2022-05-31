@@ -12,7 +12,7 @@ session_start();
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/Fuel.png" rel="icon">
+    <link href="img/fuel.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
